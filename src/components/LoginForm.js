@@ -22,9 +22,8 @@ const LoginForm = ({ switchToSignup }) => {
       });
       const data = await response.json();
       alert(data.message); // Display the server response
-      
+      // Redirect to the product page after successful login
       if (response.status === 200) {
-        localStorage.setItem("isLoggedIn", "true"); // Set isLoggedIn on successful login
         navigate('/products'); // Redirect to the product page
       }
     } catch (error) {
@@ -32,7 +31,6 @@ const LoginForm = ({ switchToSignup }) => {
       alert('Error logging in. Please try again.'); // Display an error message if login fails
     }
   };
-  
 
   return (
     <div>
